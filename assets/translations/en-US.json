@@ -1,0 +1,15 @@
+{
+  "app_name": "News",
+  "headline_news": "Headlines",
+  "news_detail": "News Detail",
+  "error": "Error",
+  "settings": "Settings",
+  "language": "Language",
+  "turkish": "Turkish",
+  "english": "English",
+  "german": "German",
+  "theme": "Theme",
+  "light": "Light",
+  "dark": "Dark",
+  "system": "System"
+}

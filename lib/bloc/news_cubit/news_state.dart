@@ -1,20 +1,28 @@
 part of 'news_cubit.dart';
 
-@immutable
+/// Haberlerin istek durumlarının tutulduğu sınıf
 abstract class NewsState {}
 
-class NewsInitial extends NewsState {}
+/// Haberlerin istek durumlarının tutulduğu sınıfın başlangıç durumu
+final class NewsInitial extends NewsState {}
 
-class NewsLoading extends NewsState {}
+/// Haberlerin istek durumlarının tutulduğu sınıfın yüklenme durumu
+final class NewsLoading extends NewsState {}
 
-class NewsLoaded extends NewsState {
-  final NewsModel newsModel;
-
+/// Haberlerin istek durumlarının tutulduğu sınıfın yüklenme durumu
+final class NewsLoaded extends NewsState {
+  /// yükleme durumu yapıcı metodu
   NewsLoaded(this.newsModel);
+
+  /// haberler
+  final NewsModel newsModel;
 }
 
-class NewError extends NewsState {
-  final NewsError error;
-
+/// Haberlerin istek durumlarının tutulduğu sınıfın yüklenme durumu
+final class NewError extends NewsState {
+  /// Haberlerin istek durumlarının tutulduğu sınıfın yüklenme durumu
   NewError(this.error);
+
+  /// hata
+  late final NewsError error;
 }

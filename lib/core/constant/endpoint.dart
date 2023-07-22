@@ -1,7 +1,13 @@
+/// News API Endpoint
 enum NewsEndpoint {
-  topHeadlines("top-headlines"),
-  everything("everything");
+  /// Haber başlıklarını getiren endpoint
+  topHeadlines('top-headlines'),
 
-  final String value;
+  /// Tüm haberleri getiren endpoint
+  everything('everything');
+
   const NewsEndpoint(this.value);
+
+  /// Endpoint degeri
+  final String value;
 }

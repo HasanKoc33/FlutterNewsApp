@@ -1,0 +1,16 @@
+{
+  "app_name": "Haberler",
+  "headline_news": "Başlıklar",
+    "search": "Ara",
+  "news_detail": "Haber Detayı",
+  "error": "Hata",
+  "settings": "Ayarlar",
+  "language": "Dil",
+  "turkish": "Türkçe",
+  "english": "İngilizce",
+  "german": "Almanca",
+  "theme": "Tema",
+  "light": "Açık",
+  "dark": "Koyu",
+  "system": "Sistem"
+}

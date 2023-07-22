@@ -12,6 +12,18 @@ Platform : Android & iOS
 - app_constants.dart dosyasına api keyinizi girin.
 - Uygulamayı çalıştırın.
 
+### Flutter Block Pattern
+Projede Bloc Pattern kullanılmıştır. Bloc Pattern hakkında detaylı bilgi için [Flutter Bloc Pattern](https://bloclibrary.dev/#/gettingstarted) adresini ziyaret edebilirsiniz.
+
+### Dil destegi
+Uygulama Türkçe ve İngilizce olarak kullanılabilir.
+Yeni dil eklemek için app_localizations.dart dosyasına Local() parametresini ekledikten sonra assets/translations/ yolunun altına json dosyanızı ekleyerek kullanmaya başlayabilirsiniz.
+
+
+
+
+
+
 
 ## Ekran Görüntüleri
  <p align="center">

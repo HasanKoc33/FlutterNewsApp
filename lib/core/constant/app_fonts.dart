@@ -1,6 +1,10 @@
+/// Uygun fontlar buraya eklenecek.
 enum AppFonts {
-  Englisht("Englisht");
+  /// [englisht] fontu
+  englisht('Englisht');
 
-  final String value;
   const AppFonts(this.value);
+
+  /// Font degeri
+  final String value;
 }

@@ -1,166 +1,99 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'news_model.g.dart';
+
+/// haber listesinin çekildiği sınıf
+@JsonSerializable()
 class NewsModel {
-  NewsModel({
-    String? status,
-    num? totalResults,
-    List<Articles>? articles,
-  }) {
-    _status = status;
-    _totalResults = totalResults;
-    _articles = articles;
-  }
+  /// haberlerin çekildiği sınıfın yapıcı metodu
+  const NewsModel({
+    this.status,
+    this.totalResults,
+    this.articles,
+  });
 
-  NewsModel.fromJson(dynamic json) {
-    _status = json['status'];
-    _totalResults = json['totalResults'];
-    if (json['articles'] != null) {
-      _articles = [];
-      json['articles'].forEach((v) {
-        _articles?.add(Articles.fromJson(v));
-      });
-    }
-  }
-  String? _status;
-  num? _totalResults;
-  List<Articles>? _articles;
-  NewsModel copyWith({
-    String? status,
-    num? totalResults,
-    List<Articles>? articles,
-  }) =>
-      NewsModel(
-        status: status ?? _status,
-        totalResults: totalResults ?? _totalResults,
-        articles: articles ?? _articles,
-      );
-  String? get status => _status;
-  num? get totalResults => _totalResults;
-  List<Articles>? get articles => _articles;
+  /// jsondan nesneye dönüştürme
+  factory NewsModel.fromJson(Map<String, dynamic> json) =>
+      _$NewsModelFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['status'] = _status;
-    map['totalResults'] = _totalResults;
-    if (_articles != null) {
-      map['articles'] = _articles?.map((v) => v.toJson()).toList();
-    }
-    return map;
-  }
+  /// durum
+  final String? status;
+
+  /// toplam sonuç
+  final num? totalResults;
+
+  /// haberler
+  final List<Articles>? articles;
+
+  /// nesneden jsona dönüştürme
+  Map<String, dynamic> toJson() => _$NewsModelToJson(this);
 }
 
+/// haberlerin çekildiği sınıf
+@JsonSerializable()
 class Articles {
-  Articles({
-    Source? source,
-    String? author,
-    String? title,
-    String? description,
-    String? url,
-    String? urlToImage,
-    String? publishedAt,
-    String? content,
-  }) {
-    _source = source;
-    _author = author;
-    _title = title;
-    _description = description;
-    _url = url;
-    _urlToImage = urlToImage;
-    _publishedAt = publishedAt;
-    _content = content;
-  }
+  /// haberlerin çekildiği sınıfın yapıcı metodu
+  const Articles({
+    this.source,
+    this.author,
+    this.title,
+    this.description,
+    this.url,
+    this.urlToImage,
+    this.publishedAt,
+    this.content,
+  });
 
-  Articles.fromJson(dynamic json) {
-    _source = json['source'] != null ? Source.fromJson(json['source']) : null;
-    _author = json['author'];
-    _title = json['title'];
-    _description = json['description'];
-    _url = json['url'];
-    _urlToImage = json['urlToImage'];
-    _publishedAt = json['publishedAt'];
-    _content = json['content'];
-  }
-  Source? _source;
-  String? _author;
-  String? _title;
-  String? _description;
-  String? _url;
-  String? _urlToImage;
-  String? _publishedAt;
-  String? _content;
-  Articles copyWith({
-    Source? source,
-    String? author,
-    String? title,
-    String? description,
-    String? url,
-    String? urlToImage,
-    String? publishedAt,
-    String? content,
-  }) =>
-      Articles(
-        source: source ?? _source,
-        author: author ?? _author,
-        title: title ?? _title,
-        description: description ?? _description,
-        url: url ?? _url,
-        urlToImage: urlToImage ?? _urlToImage,
-        publishedAt: publishedAt ?? _publishedAt,
-        content: content ?? _content,
-      );
-  Source? get source => _source;
-  String? get author => _author;
-  String? get title => _title;
-  String? get description => _description;
-  String? get url => _url;
-  String? get urlToImage => _urlToImage;
-  String? get publishedAt => _publishedAt;
-  String? get content => _content;
+  /// jsondan nesneye dönüştürme
+  factory Articles.fromJson(Map<String, dynamic> json) =>
+      _$ArticlesFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    if (_source != null) {
-      map['source'] = _source?.toJson();
-    }
-    map['author'] = _author;
-    map['title'] = _title;
-    map['description'] = _description;
-    map['url'] = _url;
-    map['urlToImage'] = _urlToImage;
-    map['publishedAt'] = _publishedAt;
-    map['content'] = _content;
-    return map;
-  }
+  /// kaynak
+  final Source? source;
+
+  /// yazar
+  final String? author;
+
+  /// başlık
+  final String? title;
+
+  /// açıklama
+  final String? description;
+
+  /// url
+  final String? url;
+
+  /// resim url
+  final String? urlToImage;
+
+  /// yayınlanma tarihi
+  final String? publishedAt;
+
+  /// içerik
+  final String? content;
+
+  /// nesneden jsona dönüştürme
+  Map<String, dynamic> toJson() => _$ArticlesToJson(this);
 }
 
-class Source {
-  Source({
-    dynamic id,
-    String? name,
-  }) {
-    _id = id;
-    _name = name;
-  }
+/// kaynak sınıf
+@JsonSerializable()
+final class Source {
+  /// kaynak sınıfın yapıcı metodu
+  const Source({
+    this.id,
+    this.name,
+  });
 
-  Source.fromJson(dynamic json) {
-    _id = json['id'];
-    _name = json['name'];
-  }
-  dynamic _id;
-  String? _name;
-  Source copyWith({
-    dynamic id,
-    String? name,
-  }) =>
-      Source(
-        id: id ?? _id,
-        name: name ?? _name,
-      );
-  dynamic get id => _id;
-  String? get name => _name;
+  /// jsondan nesneye dönüştürme
+  factory Source.fromJson(Map<String, dynamic> json) => _$SourceFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['id'] = _id;
-    map['name'] = _name;
-    return map;
-  }
+  /// id
+  final dynamic id;
+
+  /// isim
+  final String? name;
+
+  /// nesneden jsona dönüştürme
+  Map<String, dynamic> toJson() => _$SourceToJson(this);
 }

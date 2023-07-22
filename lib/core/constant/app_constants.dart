@@ -1,10 +1,13 @@
+/// Uyuglama sabitleri
 enum AppConstants {
-  appName("News App"),
-  newsHost("newsapi.org"),
-  // TODO: Add your API key here
-  apiKey("YOUR_API_KEY");
+  /// Haberlerin çekileceği api host adresi
+  newsHost('newsapi.org'),
 
+  /// News api key
+  apiKey('401ac27513f84f94b036be2316f43d82');
 
-  final String value;
   const AppConstants(this.value);
+
+  /// Sabit degeri
+  final String value;
 }
