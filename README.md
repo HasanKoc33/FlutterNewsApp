@@ -1,14 +1,15 @@
 # Flutter Haber Uygulaması
 
-API : https://newsapi.org/ 
+API : https://newsapi.org/
 Arcutecture : Bloc Pattern
 State Management : Bloc
 Platform : Android & iOS
 
+
 ## Başlarken 
 
 - Bu depoyu yerel makinenizde klonlayın.
-- https://newsapi.org/ adresinden api key alın.
+- https://newsapi.org/ adresinden api key edinin.
 - app_constants.dart dosyasına api keyinizi girin.
 - Uygulamayı çalıştırın.
 
